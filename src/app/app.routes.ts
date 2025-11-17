@@ -21,5 +21,10 @@ export const routes: Routes = [
   {
     path: 'debug',
     loadComponent: () => import('./pages/debug/debug.page').then( m => m.DebugPage)
+  },
+  {
+    path: 'map',
+    loadComponent: () => import('./pages/map/map.page').then( m => m.MapPage)
   }
+
 ];
