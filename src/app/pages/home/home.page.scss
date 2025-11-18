@@ -1,0 +1,117 @@
+ion-content {
+  --background: #bfbfbf; // gris de fondo general
+}
+
+/* Contenedor para centrar la tarjeta en pantallas grandes */
+.screen-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tarjeta tipo celular */
+.card {
+  width: min(430px, 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+/* Bloques apilados */
+.block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ───────── Bloque superior ───────── */
+
+.block-top {
+  flex: 0 0 20vh;                    // altura aproximada
+  padding-top: 24px;
+  background-image: url("./../../../assets/images/fondo_superior.png");
+  background-size: cover;
+  background-position: center top;
+}
+
+.text-bienvenido {
+  margin: 50px 0 16px;
+  font-family: 'Amaranth', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(26px, 6vw, 32px);
+  color: #000;
+}
+
+/* Logo dentro de un círculo blanco */
+.logo-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.logo-circle img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+/* ───────── Bloque inferior ───────── */
+
+.block-bottom {
+  flex: 1;
+  padding: 24px 32px 32px;
+  background-image: url("./../../../assets/images/fondo_inferior.png");
+  background-size: cover;
+  background-position: center bottom;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Texto “La Piragua” arriba del bloque inferior */
+.text-piragua {
+  margin: 8px 0 24px;
+  font-family: 'Amaranth', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: clamp(24px, 5vw, 28px);
+  color: #000;
+}
+
+/* Botones centrados en columna */
+.buttons {
+  margin-top: 20%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.lp-btn {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 8px;
+  background: #c8fbff; // azul clarito
+  color: #1c4c4a;      // tono oscuro
+  font-family: 'Amaranth', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: clamp(14px, 3.6vw, 16px);
+  letter-spacing: 0.5px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+/* Opcional: en escritorio que no sea tan alta y tenga esquinas redondeadas */
+@media (min-width: 768px) {
+  .card {
+    min-height: 80vh;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+}
