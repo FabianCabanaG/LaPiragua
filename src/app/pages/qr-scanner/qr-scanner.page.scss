@@ -1,0 +1,196 @@
+ion-content {
+  --background: #bfbfbf; // gris de fondo general
+}
+
+/* Igual que en home: centramos la "tarjeta" en pantallas grandes */
+.screen-wrapper {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: min(430px, 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+}
+
+/* Bloques apilados (top / bottom) */
+.block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ───────── BLOQUE SUPERIOR ───────── */
+
+.block-top {
+  flex: 0 0 22vh;
+  width: 100%;
+  padding-top: 24px;
+  background-image: url("./../../../assets/images/fondo_superior.png");
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+}
+
+/* Botón atrás */
+.back-btn {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-image: url("./../../../assets/images/back.png");
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+/* Título ESCANEAR PATRIMONIO */
+.scan-title {
+  margin-top: 56px;
+  text-align: center;
+  color: #000;
+  font-family: 'Amaranth', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+}
+
+.scan-title h1 {
+  margin: 0;
+  font-size: clamp(20px, 5.5vw, 26px);
+}
+
+/* Logo centrado bajo el título */
+.logo-circle {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 12px 0 8px;
+}
+
+.logo-circle img {
+  width: 75%;
+  height: 75%;
+  object-fit: contain;
+}
+
+/* ───────── BLOQUE INFERIOR ───────── */
+
+.block-bottom {
+  flex: 1;
+  width: 100%;
+  padding: 16px 24px 24px;
+  background-image: url("./../../../assets/images/fondo_inferior.png");
+  background-size: cover;
+  background-position: center bottom;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Layout interno: guía + tarjetas */
+.scan-layout {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Imagen de la guía */
+.guide img {
+  width: 180px;
+  max-width: 60%;
+  object-fit: contain;
+}
+
+/* Contenedor de las dos tarjetas */
+.scan-actions {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Tarjeta base */
+.scan-card {
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  background: #ffe39c;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
+
+  /* para que la imagen pueda ocupar todo el card */
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Área de imagen de la tarjeta (ocupa todo el ancho) */
+.scan-card__icon {
+  width: 100%;
+  height: 140px; // ajusta esta altura a tu gusto
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Modificador: tarjeta de cámara */
+.scan-card--camera .scan-card__icon {
+  background-image: url("./../../../assets/images/camera.png");
+}
+
+/* Modificador: tarjeta de escribir código */
+.scan-card--write .scan-card__icon {
+  background-image: url("./../../../assets/images/qr.png"); // cambia al icono que tengas
+}
+
+/* Texto debajo de la imagen */
+.scan-card span {
+  width: 100%;
+  text-align: center;
+  padding: 10px 8px 12px;
+  font-family: 'Amaranth', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: clamp(14px, 3.6vw, 16px);
+  color: #333;
+  background: #ffe39c;
+}
+
+/* ───────── VISTA ESCRITORIO ───────── */
+@media (min-width: 768px) {
+  .card {
+    min-height: 80vh;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .scan-layout {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .guide img {
+    max-width: 200px;
+  }
+
+  .scan-actions {
+    width: 50%;
+  }
+}

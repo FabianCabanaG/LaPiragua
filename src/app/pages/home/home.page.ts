@@ -21,12 +21,10 @@ export class HomePage implements OnInit {
 
   
   onRegistrar() {
-    console.log('Registrar patrimonio');
     this.router.navigate(['/registrar-patrimonio']);
   }
 
   onConsultar() {
-    console.log('Consultar patrimonio');
     this.router.navigate(['/consultar-patrimonio']);
   }
 
