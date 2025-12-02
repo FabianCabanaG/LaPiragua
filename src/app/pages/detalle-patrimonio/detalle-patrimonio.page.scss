@@ -1,0 +1,84 @@
+/* Contenedor con posicionamiento para la lupa */
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  /* 1. Proporción por defecto (Móvil): 16:9 */
+  padding-bottom: 56.25%; 
+  height: 0; 
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* 2. Media Query para PC o pantallas anchas (a partir de 768px) */
+@media (min-width: 768px) {
+  /* Reducir altura de la imagen a 21:9 */
+  .image-wrapper {
+    padding-bottom: 42.85%; /* 9 / 21 ≈ 42.85% */
+  }
+
+  /* Limitar el ancho de la tarjeta completa en PC y centrarla */
+  ion-card {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Imagen con zoom suave */
+.zoom-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: transform 0.35s ease-in-out, filter 0.3s ease-in-out;
+}
+
+.image-wrapper:hover .zoom-image {
+  transform: scale(1.12);
+  filter: brightness(1.08);
+}
+
+/* Icono de lupa centrado */
+.zoom-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  color: rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+}
+
+.image-wrapper:hover .zoom-icon {
+  opacity: 1;
+}
+
+/* Estrellas */
+.stars {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.stars ion-icon {
+  color: #f4c542; /* Color amarillo de la estrella */
+  font-size: 20px;
+  margin-right: 3px;
+}
+
+.puntaje {
+  margin-left: 6px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* 🛑 AJUSTE DE BOTONES 🛑 */
+/* Aplicar el color #36ABD9 a todos los botones en esta página */
+ion-button {
+    --background: #36ABD9;
+    --color: #ffffff; /* Texto blanco para contraste */
+}

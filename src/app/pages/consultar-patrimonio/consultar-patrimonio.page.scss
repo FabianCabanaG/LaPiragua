@@ -1,0 +1,34 @@
+ion-item {
+  --inner-padding-end: 16px;
+  align-items: flex-start;
+}
+
+ion-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+ion-label h2 {
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+ion-label p {
+  margin-top: 0;
+  margin-bottom: 4px;
+}
+
+ion-icon {
+  margin-right: 2px;
+  font-size: 18px;
+  justify-content: auto;
+}
+p{
+  font-size: 14px;
+    color: #555;
+    justify-content: auto;
+    align-items: auto;
+    text-align: auto;
+    padding: auto;
+}
