@@ -1,20 +1,37 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content class="ion-padding">
-  <h1>Bienvenido 🎉</h1>
-  <p>Login correcto. Base de datos funcionando.</p>
-</ion-content>
+<ion-header class="ion-no-border"></ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="screen-wrapper">
+    <div class="card">
+
+      <!-- BLOQUE SUPERIOR: Bienvenido + logo (fondo_superior) -->
+      <div class="block block-top">
+        <h1 class="text-bienvenido">Bienvenido</h1>
+
+        <div class="logo-circle">
+          <img src="assets/images/logo_piragua.png" alt="Logo La Piragua" />
+        </div>
+      </div>
+
+      <!-- BLOQUE INFERIOR: "La Piragua" + botones (fondo_inferior) -->
+      <div class="block block-bottom">
+        <h2 class="text-piragua">La Piragua</h2>
+
+        <div class="buttons">
+          <button class="lp-btn" (click)="onRegistrar()">
+            REGISTRAR PATRIMONIO
+          </button>
+
+          <button class="lp-btn" (click)="onConsultar()">
+            CONSULTAR PATRIMONIO
+          </button>
+
+          <button class="lp-btn" (click)="onQr()">
+            CÓDIGO QR
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </ion-content>
-
-

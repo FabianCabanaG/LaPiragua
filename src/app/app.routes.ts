@@ -25,6 +25,18 @@ export const routes: Routes = [
   {
     path: 'map',
     loadComponent: () => import('./pages/map/map.page').then( m => m.MapPage)
+  },  {
+    path: 'registrar-patrimonio',
+    loadComponent: () => import('./pages/registrar-patrimonio/registrar-patrimonio.page').then( m => m.RegistrarPatrimonioPage)
+  },
+  {
+    path: 'consultar-patrimonio',
+    loadComponent: () => import('./pages/consultar-patrimonio/consultar-patrimonio.page').then( m => m.ConsultarPatrimonioPage)
+  },
+  {
+    path: 'qr-scanner',
+    loadComponent: () => import('./pages/qr-scanner/qr-scanner.page').then( m => m.QrScannerPage)
   }
+
 
 ];

@@ -1,0 +1,50 @@
+<ion-header class="ion-no-border"></ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="screen-wrapper">
+    <div class="card">
+
+      <!-- BLOQUE SUPERIOR: fondo + atrás + título + logo -->
+      <div class="block block-top">
+        <!-- Botón atrás -->
+        <button class="back-btn" (click)="onBack()"></button>
+
+        <!-- Título ESCANEAR PATRIMONIO -->
+        <div class="scan-title">
+          <h1>ESCANEAR PATRIMONIO</h1>
+        </div>
+
+        <!-- Logo -->
+        <div class="logo-circle">
+          <img src="assets/images/logo_piragua.png" alt="Logo La Piragua" />
+        </div>
+      </div>
+
+      <!-- BLOQUE INFERIOR: guía + tarjetas -->
+      <div class="block block-bottom">
+        <div class="scan-layout">
+
+          <!-- Ilustración guía -->
+          <div class="guide">
+            <img src="assets/images/guia.png" alt="Guía patrimonio" />
+          </div>
+
+          <!-- Tarjetas de acción -->
+          <div class="scan-actions">
+            <button class="scan-card scan-card--camera" (click)="onScan()">
+              <div class="scan-card__icon"></div>
+              <span>ESCANEA</span>
+            </button>
+
+            <button class="scan-card scan-card--write" (click)="onWriteCode()">
+              <div class="scan-card__icon"></div>
+              <span>ESCRIBE</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</ion-content>
