@@ -1,0 +1,83 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ patrimonio?.nombre }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="patrimonio">
+
+  <ion-card>
+    <div class="image-wrapper">
+      <img class="zoom-image" [src]="patrimonio.foto" alt="Foto del patrimonio">
+      <div class="zoom-icon">
+        <ion-icon name="search-outline"></ion-icon>
+      </div>
+    </div>
+
+    <ion-card-header>
+      <ion-card-title>{{ patrimonio.nombre }}</ion-card-title>
+      <ion-card-subtitle>{{ patrimonio.ubicacion }}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <div class="stars">
+        <ion-icon
+          *ngFor="let star of estrellas"
+          [name]="star <= patrimonio.calificacion ? 'star' : 'star-outline'">
+        </ion-icon>
+
+        <span class="puntaje">({{ patrimonio.calificacion }})</span>
+      </div>
+
+      <p><strong>Lat:</strong> {{ patrimonio.coordenadas.lat }}</p>
+      <p><strong>Lng:</strong> {{ patrimonio.coordenadas.lng }}</p>
+
+      <ion-button 
+  expand="block" 
+  color="primary" 
+  [routerLink]="['/map']"
+  [queryParams]="{ 
+    lat: patrimonio.coordenadas.lat, 
+    lng: patrimonio.coordenadas.lng, 
+    nombre: patrimonio.nombre 
+  }">
+  Ver en el mapa
+</ion-button>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Comentarios</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngIf="patrimonio.comentarios.length === 0">
+      <ion-label>No hay comentarios aún</ion-label>
+    </ion-item>
+
+    <ion-item *ngFor="let c of patrimonio.comentarios">
+      <ion-label>
+        <h3>{{ c.autor }} — {{ c.fecha }}</h3>
+
+        <div class="stars">
+          <ion-icon
+            *ngFor="let star of estrellas"
+            [name]="star <= c.estrellas ? 'star' : 'star-outline'">
+          </ion-icon>
+        </div>
+
+        <p>{{ c.texto }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button
+    expand="block"
+    color="success"
+    [routerLink]="['/agregar-comentario', patrimonio.id]">
+    Agregar comentario
+  </ion-button>
+
+</ion-content>

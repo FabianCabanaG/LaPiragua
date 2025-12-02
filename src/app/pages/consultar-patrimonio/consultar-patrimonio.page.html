@@ -1,13 +1,29 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>consultar-patrimonio</ion-title>
+    <ion-title>Patrimonios</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">consultar-patrimonio</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let item of patrimonios" [routerLink]="['/detalle-patrimonio', item.id]">
+      <ion-thumbnail slot="start">
+        <img [src]="item.foto">
+
+      </ion-thumbnail>
+
+      <ion-label>
+        <h2>{{item.nombre}}</h2>
+        <p>{{item.ubicacion}}</p>
+        <p >Ver detalle</p>
+
+        <!-- Calificación con estrellas -->
+        <ion-icon *ngFor="let star of [1,2,3,4,5]" [name]="star <= item.calificacion ? 'star' : 'star-outline'">
+
+        </ion-icon>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
